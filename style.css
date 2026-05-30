@@ -1,0 +1,102 @@
+body {
+    background: linear-gradient(135deg, #0f0f11 0%, #17171a 100%);
+    color: #f4f4f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 440px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 0.75rem 0;
+    background: linear-gradient(to right, #ff9a9e, #fecfef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #a1a1aa;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.requirements {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: left;
+    margin-bottom: 2.5rem;
+    border-left: 4px solid #ff9a9e;
+}
+
+.requirements h3 {
+    margin-top: 0;
+    font-size: 0.85rem;
+    color: #fecfef;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.requirements ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #e4e4e7;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.requirements li {
+    margin-bottom: 0.6rem;
+}
+
+.btn-primary {
+    background: #ffffff;
+    color: #0f0f11;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+    background: #ff9a9e;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 154, 158, 0.3);
+}
+
+.error-msg {
+    color: #ef4444;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 1.5rem;
+}
+
+.footer {
+    margin-top: 3rem;
+    font-size: 0.75rem;
+    color: #52525b;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashi Mochi — Installer</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+</head>
+<body>
+
+    <div class="card">
+        <div class="logo">🍡</div>
+        <h1>Dashi Mochi</h1>
+        <p class="subtitle">Flash your Dashi Mochi firmware and emotions directly to your ESP32 from your browser.</p>
+        
+        <div class="requirements">
+            <h3>How to install:</h3>
+            <ul>
+                <li>🔌 Connect your ESP32 to your PC using a USB data cable.</li>
+                <li>🌐 Make sure you are using Google Chrome or Microsoft Edge.</li>
+            </ul>
+        </div>
+
+        <div class="button-container">
+            <esp-web-install-button manifest="firmware/manifest.json">
+                <button slot="activate" class="btn-primary">Connect & Flash ESP32</button>
+                <span slot="unsupported" class="error-msg">
+                    ❌ Web Serial is not supported. Please open this page in desktop Chrome or Edge.
+                </span>
+            </esp-web-install-button>
+        </div>
+        
+        <div class="footer">Hosted for free on GitHub Pages via ESP Web Tools</div>
+    </div>
+
+</body>
+</html>
