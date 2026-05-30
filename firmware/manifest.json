@@ -6,19 +6,19 @@
       "chipFamily": "ESP32",
       "parts": [
         { 
-          "path": "https://github.com/YOUR_GITHUB_USERNAME/dashi-mochi/releases/download/v1.0.0/bootloader.bin", 
+          "path": "https://raw.githubusercontent.com/shashwatdubey0/dashi-mochi/main/firmware/bootloader.bin", 
           "offset": 4096 
         },
         { 
-          "path": "https://github.com/YOUR_GITHUB_USERNAME/dashi-mochi/releases/download/v1.0.0/partitions.bin", 
+          "path": "https://raw.githubusercontent.com/shashwatdubey0/dashi-mochi/main/firmware/partitions.bin", 
           "offset": 32768 
         },
         { 
-          "path": "https://github.com/YOUR_GITHUB_USERNAME/dashi-mochi/releases/download/v1.0.0/firmware.bin", 
+          "path": "https://raw.githubusercontent.com/shashwatdubey0/dashi-mochi/main/firmware/firmware.bin", 
           "offset": 65536 
         },
         { 
-          "path": "https://github.com/YOUR_GITHUB_USERNAME/dashi-mochi/releases/download/v1.0.0/fatfs.bin", 
+          "path": "https://raw.githubusercontent.com/shashwatdubey0/dashi-mochi/main/firmware/fatfs.bin", 
           "offset": 2686976 
         }
       ]
