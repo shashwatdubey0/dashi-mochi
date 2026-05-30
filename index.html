@@ -3,103 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashi Mochi // Developer Control Center</title>
+    <title>Dashi Mochi — Desktop Robotic Companion</title>
     <link rel="stylesheet" href="style.css">
     <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
 </head>
 <body>
 
-    <div class="dashboard-container">
-        <aside class="sidebar">
-            <div class="brand">
-                <span class="avatar">🍡</span>
-                <div>
-                    <h3>Dashi Mochi</h3>
-                    <span class="status-badge online">v1.0.0 Live</span>
-                </div>
-            </div>
-            <nav class="nav-links">
-                <a href="#" class="active"><span class="icon">⚡</span> Firmware Flasher</a>
-                <a href="https://github.com" target="_blank"><span class="icon">📂</span> Source Code</a>
-            </nav>
-        </aside>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
 
-        <main class="main-content">
-            <header class="top-header">
-                <h1>Firmware Deployment Station</h1>
-                <p>Flash the core execution engine and the raw FatFS emotion partition directly over Web Serial.</p>
+    <div class="app-wrapper">
+        <main class="installer-card">
+            
+            <header class="hero-section">
+                <div class="avatar-logo">🍡</div>
+                <h1 class="product-title">Dashi Mochi</h1>
+                <p class="product-tagline">Your desktop robotic companion with an interactive on-board FFat emotion engine.</p>
+                <div class="badge-row">
+                    <span class="badge fw-badge">Firmware v1.0.0</span>
+                    <span class="badge status-badge">● System Ready</span>
+                </div>
             </header>
 
-            <div class="grid-layout">
-                <div class="glass-card deploy-zone">
-                    <h2>Target Hardware Configuration</h2>
-                    <p class="card-subtitle">Verify your local machine configurations before running the flasher sequence.</p>
+            <section class="wizard-grid">
+                
+                <div class="wizard-panel">
+                    <div class="step-num">01</div>
+                    <h2>Prepare Connection</h2>
+                    <p class="panel-desc">Ensure your device configuration conforms to the serial requirements before starting the flash mapping loop.</p>
                     
-                    <div class="checklist">
-                        <label class="check-item">
-                            <input type="checkbox" checked disabled>
-                            <span>ESP32 NodeMCU Development Module Connected</span>
-                        </label>
-                        <label class="check-item">
-                            <input type="checkbox" checked disabled>
-                            <span>USB-to-UART Silicon Labs Driver Active</span>
-                        </label>
-                        <label class="check-item">
-                            <input type="checkbox" checked disabled>
-                            <span>Chromium Engine Web Browser Target</span>
-                        </label>
-                    </div>
+                    <ul class="prep-list">
+                        <li>
+                            <span class="bullet-icon">🔌</span>
+                            <div>
+                                <strong>USB Interface Link</strong>
+                                <p>Connect your ESP32 module using a secure micro-USB or Type-C data-transfer cable layer.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="bullet-icon">🌐</span>
+                            <div>
+                                <strong>Browser Environment</strong>
+                                <p>Open this console via Google Chrome or Microsoft Edge desktop engines to unleash Web Serial permissions.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-                    <div class="flasher-wrapper">
+                <div class="wizard-panel deploy-panel">
+                    <div class="step-num">02</div>
+                    <h2>Deploy Firmware</h2>
+                    <p class="panel-desc">This action completely clears the system space, mapping out your custom partition tables alongside your raw emotion animation streams simultaneously.</p>
+                    
+                    <div class="action-wrapper">
                         <esp-web-install-button manifest="firmware/manifest.json">
-                            <button slot="activate" class="btn-glow">INITIALIZE FLASH SEQUENCE</button>
-                            <span slot="unsupported" class="error-text">⚠️ Web Serial API Blocked. Switch to Desktop Chrome or Edge.</span>
+                            <button slot="activate" class="btn-premium">Connect & Flash Device</button>
+                            <span slot="unsupported" class="error-msg-box">
+                                ⚠️ Web Serial API Blocked. Please shift to a desktop Chrome-variant engine to access hardware communication.
+                            </span>
                         </esp-web-install-button>
                     </div>
-                </div>
 
-                <div class="glass-card sys-specs">
-                    <h2>Memory Partition Mapping</h2>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Partition Block</th>
-                                    <th>Memory Address Offset</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>bootloader.bin</code></td>
-                                    <td><code>0x1000</code></td>
-                                    <td><span class="tag tag-blue">Ready</span></td>
-                                </tr>
-                                <tr>
-                                    <td><code>partitions.bin</code></td>
-                                    <td><code>0x8000</code></td>
-                                    <td><span class="tag tag-blue">Ready</span></td>
-                                </tr>
-                                <tr>
-                                    <td><code>firmware.bin</code></td>
-                                    <td><code>0x10000</code></td>
-                                    <td><span class="tag tag-purple">Core App</span></td>
-                                </tr>
-                                <tr>
-                                    <td><code>fatfs.bin</code></td>
-                                    <td><code>0x290000</code></td>
-                                    <td><span class="tag tag-orange">FFat Assets</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="partition-summary">
+                        <h3>Partition Payload Structure</h3>
+                        <div class="pill-group">
+                            <span class="pill">Bootloader <code>0x1000</code></span>
+                            <span class="pill">Partitions <code>0x8000</code></span>
+                            <span class="pill">Core Loop <code>0x10000</code></span>
+                            <span class="pill highlight">FatFS Drive <code>0x290000</code></span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <footer class="terminal-footer">
-                <div class="terminal-header">ℹ️ Deployment Engine Specifications</div>
-                <p>The flasher formats block ranges automatically. If expressions fail to cycle upon initialization, hold the BOOT button down on the ESP32 module layout when starting the sequence mapping.</p>
+            </section>
+
+            <section class="hardware-blueprint-section">
+                <div class="blueprint-header">
+                    <div class="step-num">03</div>
+                    <div>
+                        <h2>Hardware Wiring Blueprint</h2>
+                        <p class="panel-desc">Map out these physical pin coordinates to cleanly route your hardware-accelerated emotion screen to your ESP32 controller array frames.</p>
+                    </div>
+                </div>
+
+                <div class="schematic-board">
+                    <div class="mcu-chassis">
+                        <div class="chassis-title">ESP32 DevKit Controller</div>
+                        <div class="pin-rail rail-right">
+                            <div class="pin-port"><span class="pin-lbl gnd">GND</span><span class="node node-gnd"></span></div>
+                            <div class="pin-port"><span class="pin-lbl vcc">5V / VCC</span><span class="node node-vcc"></span></div>
+                            <div class="pin-port"><span class="pin-lbl">GPIO 23 (MOSI)</span><span class="node node-mosi"></span></div>
+                            <div class="pin-port"><span class="pin-lbl">GPIO 18 (SCK)</span><span class="node node-sck"></span></div>
+                            <div class="pin-port"><span class="pin-lbl">GPIO 15 (CS)</span><span class="node node-cs"></span></div>
+                            <div class="pin-port"><span class="pin-lbl">GPIO 2 (DC)</span><span class="node node-dc"></span></div>
+                            <div class="pin-port"><span class="pin-lbl">GPIO 4 (RST)</span><span class="node node-rst"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="wiring-bus-tracks">
+                        <div class="bus-line line-gnd"></div>
+                        <div class="bus-line line-vcc"></div>
+                        <div class="bus-line line-mosi"></div>
+                        <div class="bus-line line-sck"></div>
+                        <div class="bus-line line-cs"></div>
+                        <div class="bus-line line-dc"></div>
+                        <div class="bus-line line-rst"></div>
+                    </div>
+
+                    <div class="display-chassis">
+                        <div class="chassis-title">Emotion Screen Module</div>
+                        <div class="pin-rail rail-left">
+                            <div class="pin-port"><span class="node node-gnd"></span><span class="pin-lbl gnd">GND</span></div>
+                            <div class="pin-port"><span class="node node-vcc"></span><span class="pin-lbl vcc">VCC (3.3V/5V)</span></div>
+                            <div class="pin-port"><span class="node node-mosi"></span><span class="pin-lbl">SDI / SDA (Data)</span></div>
+                            <div class="pin-port"><span class="node node-sck"></span><span class="pin-lbl">SCK / SCL (Clock)</span></div>
+                            <div class="pin-port"><span class="node node-cs"></span><span class="pin-lbl">CS (Chip Select)</span></div>
+                            <div class="pin-port"><span class="node node-dc"></span><span class="pin-lbl">DC / RS (Data-Cmd)</span></div>
+                            <div class="pin-port"><span class="node node-rst"></span><span class="pin-lbl">RES / RST (Reset)</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer-notice">
+                <p>💡 <strong>Flashing Tip:</strong> If the installer initialization sequence hangs up on the handshaking phase, maintain continuous downward pressure on your device's hardware <strong>BOOT / IO0 button</strong> until the loader tracks past 5% output progress.</p>
             </footer>
+
         </main>
     </div>
 
