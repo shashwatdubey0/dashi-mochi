@@ -3,35 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashi Mochi — Installer</title>
+    <title>Dashi Mochi // Developer Control Center</title>
     <link rel="stylesheet" href="style.css">
     <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
 </head>
 <body>
 
-    <div class="card">
-        <div class="logo">🍡</div>
-        <h1>Dashi Mochi</h1>
-        <p class="subtitle">Flash your Dashi Mochi firmware and emotions directly to your ESP32 from your browser.</p>
-        
-        <div class="requirements">
-            <h3>How to install:</h3>
-            <ul>
-                <li>🔌 Connect your ESP32 to your PC using a USB data cable.</li>
-                <li>🌐 Make sure you are using Google Chrome or Microsoft Edge.</li>
-            </ul>
-        </div>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="avatar">🍡</span>
+                <div>
+                    <h3>Dashi Mochi</h3>
+                    <span class="status-badge online">v1.0.0 Live</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active"><span class="icon">⚡</span> Firmware Flasher</a>
+                <a href="https://github.com" target="_blank"><span class="icon">📂</span> Source Code</a>
+            </nav>
+        </aside>
 
-        <div class="button-container">
-            <esp-web-install-button manifest="firmware/manifest.json">
-                <button slot="activate" class="btn-primary">Connect & Flash ESP32</button>
-                <span slot="unsupported" class="error-msg">
-                    ❌ Web Serial is not supported. Please open this page in desktop Chrome or Edge.
-                </span>
-            </esp-web-install-button>
-        </div>
-        
-        <div class="footer">Hosted for free on GitHub Pages via ESP Web Tools</div>
+        <main class="main-content">
+            <header class="top-header">
+                <h1>Firmware Deployment Station</h1>
+                <p>Flash the core execution engine and the raw FatFS emotion partition directly over Web Serial.</p>
+            </header>
+
+            <div class="grid-layout">
+                <div class="glass-card deploy-zone">
+                    <h2>Target Hardware Configuration</h2>
+                    <p class="card-subtitle">Verify your local machine configurations before running the flasher sequence.</p>
+                    
+                    <div class="checklist">
+                        <label class="check-item">
+                            <input type="checkbox" checked disabled>
+                            <span>ESP32 NodeMCU Development Module Connected</span>
+                        </label>
+                        <label class="check-item">
+                            <input type="checkbox" checked disabled>
+                            <span>USB-to-UART Silicon Labs Driver Active</span>
+                        </label>
+                        <label class="check-item">
+                            <input type="checkbox" checked disabled>
+                            <span>Chromium Engine Web Browser Target</span>
+                        </label>
+                    </div>
+
+                    <div class="flasher-wrapper">
+                        <esp-web-install-button manifest="firmware/manifest.json">
+                            <button slot="activate" class="btn-glow">INITIALIZE FLASH SEQUENCE</button>
+                            <span slot="unsupported" class="error-text">⚠️ Web Serial API Blocked. Switch to Desktop Chrome or Edge.</span>
+                        </esp-web-install-button>
+                    </div>
+                </div>
+
+                <div class="glass-card sys-specs">
+                    <h2>Memory Partition Mapping</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Partition Block</th>
+                                    <th>Memory Address Offset</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>bootloader.bin</code></td>
+                                    <td><code>0x1000</code></td>
+                                    <td><span class="tag tag-blue">Ready</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>partitions.bin</code></td>
+                                    <td><code>0x8000</code></td>
+                                    <td><span class="tag tag-blue">Ready</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>firmware.bin</code></td>
+                                    <td><code>0x10000</code></td>
+                                    <td><span class="tag tag-purple">Core App</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>fatfs.bin</code></td>
+                                    <td><code>0x290000</code></td>
+                                    <td><span class="tag tag-orange">FFat Assets</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="terminal-footer">
+                <div class="terminal-header">ℹ️ Deployment Engine Specifications</div>
+                <p>The flasher formats block ranges automatically. If expressions fail to cycle upon initialization, hold the BOOT button down on the ESP32 module layout when starting the sequence mapping.</p>
+            </footer>
+        </main>
     </div>
 
 </body>
